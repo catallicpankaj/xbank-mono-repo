@@ -3,15 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
-  	<groupId>com.xbank.services</groupId>
+
+	<groupId>com.xbank.services</groupId>
 	<artifactId>xbank-parent-svc</artifactId>
-	<version>3.1.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>XBank Microservices Parent</name>
-  	<properties>
-  		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
-		<spring.boot.version>2.2.6.RELEASE</spring.boot.version>
+	<properties>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+		<spring.boot.version>2.2.7.RELEASE</spring.boot.version>
 		<spring.cloud.version>Hoxton.SR3</spring.cloud.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -23,23 +23,27 @@
 		<sonar.language>java</sonar.language>
 		<sonar.junit.reportPaths>${project.basedir}/target/surefire-reports</sonar.junit.reportPaths>
 	</properties>
-	
-	
-	   <dependencyManagement>
+
+	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<!-- Import dependency management from Spring Boot -->
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
 				<version>${spring.boot.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-sleuth</artifactId>
-				<version>1.2.3.BUILD-SNAPSHOT</version>
+				<version>2.0.1.RELEASE</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -49,15 +53,10 @@
 				<artifactId>commons-lang3</artifactId>
 				<version>3.5</version>
 			</dependency>
+
+
 			
-			
-			<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.16.20</version>
-			<scope>compile</scope>
-		</dependency>
-		
+
 			<dependency>
 				<groupId>io.springfox</groupId>
 				<artifactId>springfox-swagger2</artifactId>
@@ -88,7 +87,13 @@
 			</resource>
 		</resources>
 		<pluginManagement>
+
 			<plugins>
+				<plugin>
+					<groupId>org.projectlombok</groupId>
+					<artifactId>lombok-maven-plugin</artifactId>
+					<version>1.18.12.0</version>
+				</plugin>
 				<plugin>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-maven-plugin</artifactId>
@@ -160,7 +165,12 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+
 		<plugins>
+			<plugin>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok-maven-plugin</artifactId>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -176,7 +186,7 @@
 		</plugins>
 	</build>
 	<profiles>
-	
+
 		<!-- All builds -->
 		<profile>
 			<id>All-Build</id>
@@ -189,7 +199,7 @@
 				<module>xbank-config-server</module>
 			</modules>
 		</profile>
-		
+
 		<!-- Individual builds -->
 		<profile>
 			<id>xbank-microservice1-svc</id>
@@ -210,5 +220,5 @@
 			</modules>
 		</profile>
 	</profiles>
-	
+
 </project>
