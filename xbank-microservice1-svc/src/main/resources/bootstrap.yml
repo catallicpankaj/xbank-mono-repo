@@ -1,0 +1,12 @@
+#Cloud config props - Comment the props if required to boot without config server
+# And comment the cloud config starter dependency in POM
+spring:
+  application:
+    name: microservice1
+  cloud:
+    config:
+      profile: dev
+      uri: http://localhost:8100
+
+
+

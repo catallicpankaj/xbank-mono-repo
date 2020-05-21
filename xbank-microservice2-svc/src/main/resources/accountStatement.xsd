@@ -1,0 +1,52 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://usbank.com/producing-web-service"
+           targetNamespace="http://usbank.com/producing-web-service" elementFormDefault="qualified">
+
+	<xs:element name="getAccountBalanceRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="accountNo" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getAccountBalanceResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="balance" type="tns:accountStatement" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="accountStatement">
+		<xs:sequence>
+			<xs:element name="accountNo" type="xs:string" />
+			<xs:element name="balance" type="xs:string" />
+			<xs:element name="user" type="tns:user" />
+			<xs:element name="currency" type="xs:string" />
+			<xs:element name="transactions" type="tns:transactions" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="user">
+		<xs:sequence>
+			<xs:element name="userId" type="xs:string" />
+			<xs:element name="firstName" type="xs:string" />
+			<xs:element name="lastName" type="xs:string" />
+			<xs:element name="phoneNo" type="xs:string" />
+			<xs:element name="address" type="xs:string" />
+			<xs:element name="gender" type="xs:string" />
+			<xs:element name="emailAddress" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="transactions">
+		<xs:sequence>
+			<xs:element name="date" type="xs:string" />
+			<xs:element name="transactionType" type="xs:string" />
+			<xs:element name="amount" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+</xs:schema>

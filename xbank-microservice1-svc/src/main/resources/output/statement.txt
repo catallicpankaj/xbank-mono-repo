@@ -1,0 +1,77 @@
+{
+  "userId": "2",
+  "cardStatement": {
+    "user": {
+      "userId": "2",
+      "firstName": "Tom",
+      "lastName": "tuck",
+      "phoneNo": "9872234897",
+      "address": "address 2 test",
+      "gender": null,
+      "emailAddress": "Tom.tuck@gmail.com"
+    },
+    "cardNumber": "213333",
+    "balance": "34567",
+    "currency": "Rupee",
+    "spendingLimit": 0.0,
+    "transactions": [
+      {
+        "date": "2-04-20",
+        "transactionType": "Credit",
+        "amount": 4473
+      },
+      {
+        "date": "7-04-20",
+        "transactionType": "Debit",
+        "amount": 4564
+      },
+      {
+        "date": "9-04-20",
+        "transactionType": "Debit",
+        "amount": 3563
+      },
+      {
+        "date": "27-04-20",
+        "transactionType": "Debit",
+        "amount": 4641
+      }
+    ]
+  },
+  "accountStatement": {
+    "accountNo": "13333",
+    "balance": "34567",
+    "user": {
+      "userId": "2",
+      "firstName": "Tom",
+      "lastName": "tuck",
+      "phoneNo": "9872234897",
+      "address": "address 2 test",
+      "gender": null,
+      "emailAddress": "Tom.tuck@gmail.com"
+    },
+    "currency": "Rupee",
+    "transactions": [
+      {
+        "date": "2-04-20",
+        "transactiontype": "Credit",
+        "amount": 15172
+      },
+      {
+        "date": "7-04-20",
+        "transactiontype": "Debit",
+        "amount": 15263
+      },
+      {
+        "date": "9-04-20",
+        "transactiontype": "Credit",
+        "amount": 14262
+      },
+      {
+        "date": "27-04-20",
+        "transactiontype": "Debit",
+        "amount": 15340
+      }
+    ]
+  },
+  "status": "success"
+}

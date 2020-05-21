@@ -1,0 +1,18 @@
+server:
+  port: 8100
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/catallicpankaj/cloudconfigprops
+          skip-ssl-validation: true
+          timeout: 60000
+          clone-on-start: true
+          repos:
+            microservice1:
+              uri: https://github.com/catallicpankaj/cloudconfigprops
+              search-paths: microservice1
+              
+             
